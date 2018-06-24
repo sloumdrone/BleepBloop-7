@@ -1,0 +1,339 @@
+/*
+    font-family: 'VT323', monospace;
+    font-family: 'Averia Serif Libre', cursive;
+    outer-space: #454545; (Darkest)
+    rusty-red: #DA2C38;
+    pastel-gray: #CECECE; (Light)
+    sonic-silver: #757780 (Med Dark)
+    blond: #F4F0BB;
+*/
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+#box {
+    width: 100vw;
+    height: 100%;
+    background-color: #CECECE;
+    font-family: 'Averia Serif Libre', cursive;
+    color: #F4F0BB;
+    padding: 4rem;
+    min-height: 100vh;
+}
+
+
+
+/* Componenets */
+
+.knob {
+    width: 2rem;
+    height: 2rem;
+    background-color: #454545;
+    border-radius: 100%;
+    box-shadow: 0 0 1rem black;
+    position: relative;
+    cursor: row-resize;
+}
+
+.knob::after {
+    height: 50%;
+    width: 0;
+    border: 1px solid #F4F0BB;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    content: '';
+}
+
+.knob, .readout {
+    display: inline-block;
+    font-family: 'VT323', monospace;
+    font-size: 1.75rem;
+    top: 1rem;
+}
+
+
+/* Structure */
+.controls {
+    width: 100%;
+}
+
+.secondaryControls {
+    width: 100%;
+}
+
+.controlGrp {
+    position: relative;
+    padding: 0.25rem 1rem;
+    border: 0.25rem solid #454545;
+    border-radius: 1rem;
+    cursor: default;
+    background-color: #757780;
+    display: inline-block;
+    min-height: 5rem;
+    vertical-align: top;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.startStopPlayHolder {
+    display: inline-block;
+    margin: 0 1rem 1rem 0;
+}
+
+.startStopPlayHolder li {
+    display: inline-block;
+    margin: 1rem;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.controlGrp {
+    margin: 0 1rem 4rem 0;
+}
+
+.pause::after {
+    width: 0.4rem;
+    height: 2rem;
+    display: inline-block;
+    left: 0.5rem;
+    background-color: #DA2C38;
+    border: 0px;
+    content: '';
+}
+
+.pause::before {
+    width: 0.4rem;
+    height: 2rem;
+    display: inline-block;
+    position: absolute;
+    right: 0.5rem;
+    background-color: #DA2C38;
+    border: 0px;
+    content: '';
+}
+
+
+.play.playing::after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1rem 0 1rem 1.5rem;
+    border-color: transparent transparent transparent #DA2C38;
+    content: '';
+    display: inline-block;
+}
+
+.stop::after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: inline-block;
+    background-color: #DA2C38;
+}
+
+.record::after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: inline-block;
+    background-color: #DA2C38;
+    border-radius: 100%;
+}
+
+
+
+.readout {
+    background-color: red;
+    width: 4rem;
+    height: 2rem;
+    vertical-align: top;
+    padding: 0.25rem;
+    border-radius: 0.15rem;
+    position: relative;
+    border: 2px solid #454545;
+    margin-left: 1rem;
+}
+
+.readoutDisplay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: inline-block;
+    letter-spacing: 0.25rem;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    margin-top: 0;
+    padding-left: 2rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px #454545;
+    font-size: 3rem;
+}
+
+.bankRow {
+    height: 2rem;
+}
+
+.bankButton {
+    display: inline-block;
+    width: 2rem;
+    height: 95%;
+    font-size: 1.75rem;
+    font-family: 'VT323', monospace;
+    text-align: center;
+    border: 2px solid #454545;
+    border-radius: 0.15rem;
+    background-color: #454545;
+    cursor: pointer;
+}
+
+.bankButton.active {
+    color: red;
+}
+
+.title {
+    background-color: #757780;
+    padding: 0.25rem 0.5rem;
+    font-family: 'Averia Serif Libre', cursive;
+    color: #F4F0BB;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    border-radius: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 400;
+    border: 0.25rem solid #454545;
+}
+
+.top-title {
+    top: 0;
+    transform: translate(-50%,-93%);
+    border-bottom: 0.25rem solid #757780;
+}
+
+.bottom-title {
+    bottom: 0;
+    transform: translate(-50%,93%);
+    border-top: 0.25rem solid #757780;
+}
+
+
+#pads {
+    width: 92%;
+    position: relative;
+    padding: 0.25rem 1rem;
+    border: 0.25rem solid #454545;
+    border-radius: 1rem;
+    cursor: default;
+    background-color: #757780;
+    display: block;
+    min-height: 5rem;
+    vertical-align: top;
+    margin-bottom: 4rem;
+}
+
+.secondaryControls .button {
+    display: inline-block;
+    background-color: #CECECE;
+    height: 2rem;
+    vertical-align: top;
+    border-radius: 0.5rem;
+    padding: 0.25rem 1rem;
+    border: 0.25rem solid #454545;
+    color: #DA2C38;
+}
+
+
+.secondaryControls input {
+    background-color: #454545;
+    border: 0.2rem double #CECECE;
+    height: 2rem;
+    padding-left: 1rem;
+    min-width: 15rem;
+    border-radius: 0.2rem;
+}
+
+.secondaryControls .controlGrp {
+    padding-top: 1rem;
+}
+
+.secondaryControls .button {
+    top: 0.5rem;
+}
+
+
+.padColHolder {
+    width: 12.5%;
+    display: inline-block;
+}
+
+.pad {
+    width: 90%;
+    margin: 1rem 0;
+    margin-left: 5%;
+    height: 5rem;
+    background-color: #DA2C38;
+    border-radius: 1rem;
+    position: relative;
+    box-shadow: 0 1rem 1rem rgba(20,20,20,0.5);
+    cursor: pointer;
+    position: relative;
+    border: 2px solid #DA2C38;
+}
+
+.pad:hover {
+    border: 2px solid #F4F0BB;
+}
+
+.padMinus, .padPlus {
+    width: 1rem;
+    height: 1rem;
+    font-size: 1.5rem;
+    line-height: 1rem;
+    background-color: #CECECE;
+    color: #454545;
+    border: 1px solid black;
+    cursor: pointer;
+    font-family: 'Averia Serif Libre', cursive;
+    border-radius: 100%;
+    position: absolute;
+    top: 0.5rem;
+    text-align: center;
+}
+
+.padMinus:hover, .padPlus:hover {
+    border: 1px solid #F4F0BB;
+}
+
+.padMinus {
+    left: 0.5rem;
+}
+
+.padPlus {
+    right: 0.5rem;
+}
+
+.pad.active {
+    background-color: rgba(80,80,200,0.95);
+}

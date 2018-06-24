@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <title>BleepBloop-7: A blip synth</title>
+        <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,400,700|VT323" rel="stylesheet">
+        <link rel="stylesheet" href="./lib/css/main.css">
+        <script src="./lib/js/jquery-3.3.1.js"></script>
+        <script src="./lib/js/main.js" defer></script>
+    </head>
+    <body>
+        <div id="box">
+            <h1 class="logo">
+                BleepBloop-7
+            </h1>
+            <div class="controls">
+                <ul class="controlGrp startStopPlayHolder">
+                    <div class="title bottom-title">General</div>
+                    <li class="play playing"></li>
+                    <li class="pause"></li>
+                    <li class="stop"></li>
+                    <li class="record"></li>
+                </ul>
+                <div class="controlGrp tempoHolder">
+                    <div class="title bottom-title">Tempo</div>
+                    <div class="knob tempoKnob"></div>
+                    <div class="readout tempoReadout">
+                        <span class="readoutDisplay">120</span>
+                    </div>
+                </div>
+                <div class="controlGrp bankHolder">
+                    <div class="title top-title">Sequence Bank</div>
+                    <div class="title bottom-title">Sounds Bank</div>
+                    <div class="bankRow sequence">
+                        <div class="sequence bankButton active">1</div>
+                        <div class="sequence bankButton">2</div>
+                        <div class="sequence bankButton">3</div>
+                        <div class="sequence bankButton">4</div>
+                        <div class="sequence bankButton">5</div>
+                        <div class="sequence bankButton">6</div>
+                        <div class="sequence bankButton">7</div>
+                    </div>
+                    <div class="bankRow voice">
+                        <div class="voice bankButton active">1</div>
+                        <div class="voice bankButton">2</div>
+                        <div class="voice bankButton">3</div>
+                        <div class="voice bankButton">4</div>
+                        <div class="voice bankButton">5</div>
+                        <div class="voice bankButton">6</div>
+                        <div class="voice bankButton">7</div>
+                    </div>
+                </div>
+                <div class="controlGrp scaleHolder">
+                    <div class="title bottom-title">Scale</div>
+                    <div class="knob scale"></div>
+                    <div class="readout scaleReadout"><span class="readoutDisplay">Maj</span></div>
+                </div>
+                <div class="controlGrp keyHolder">
+                    <div class="title bottom-title">Key</div>
+                    <div class="knob key"></div>
+                    <div class="readout keyReadout"><span class="readoutDisplay">C</span></div>
+                </div>
+            </div>
+            <div id="pads"></div>
+            <div class="secondaryControls">
+                <div class="saveHolder controlGrp">
+                    <div class="title bottom-title">File Out</div>
+                    <input type="text" name="save" value="" placeholder="filename">
+                    <div class="button save">Save</div>
+                    <div class="button download">Download</div>
+                </div>
+                <div class="loadHolder controlGrp">
+                    <div class="title bottom-title">File In</div>
+                    <select class="selectFile" name="fileSelect"></select>
+                    <div class="button load">Load</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
