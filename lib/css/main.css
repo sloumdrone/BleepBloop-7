@@ -128,7 +128,7 @@ ul {
 }
 
 
-.play.playing::after {
+.play::after {
     width: 0;
     height: 0;
     border-style: solid;
@@ -136,6 +136,10 @@ ul {
     border-color: transparent transparent transparent #DA2C38;
     content: '';
     display: inline-block;
+}
+
+.play.playing::after {
+    border-color: transparent transparent transparent rgba(80,80,200,0.95);
 }
 
 .stop::after {
