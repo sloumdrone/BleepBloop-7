@@ -106,28 +106,6 @@ ul {
     margin: 0 1rem 4rem 0;
 }
 
-.pause::after {
-    width: 0.4rem;
-    height: 2rem;
-    display: inline-block;
-    left: 0.5rem;
-    background-color: #DA2C38;
-    border: 0px;
-    content: '';
-}
-
-.pause::before {
-    width: 0.4rem;
-    height: 2rem;
-    display: inline-block;
-    position: absolute;
-    right: 0.5rem;
-    background-color: #DA2C38;
-    border: 0px;
-    content: '';
-}
-
-
 .play::after {
     width: 0;
     height: 0;
@@ -345,4 +323,8 @@ canvas {
 .padColHolder.active {
     background-color: rgba(210,210,210,0.4);
     border-radius: 1rem;
+}
+
+input {
+    color: #F4F0BB;
 }
