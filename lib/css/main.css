@@ -341,3 +341,8 @@ canvas {
 .pad.active {
     background-color: rgba(80,80,200,0.95);
 }
+
+.padColHolder.active {
+    background-color: rgba(210,210,210,0.4);
+    border-radius: 1rem;
+}
